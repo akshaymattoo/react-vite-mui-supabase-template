@@ -99,6 +99,7 @@ We will setup e2e testing with [playwright](https://playwright.dev/).
 - To install playwright run `npm init playwright@latest`.
 - This will create necessary folders and configurations for the project.
 - To test run `npx playwright test`. If you would have selected github actions true then it would run test for every push. The info can be found in the `Actions` tab of your github project.
+- It gives an option to see/download the reports.
 
 # Coming 
 - Stripe Integration
