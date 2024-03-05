@@ -1,0 +1,1 @@
+export const { VITE_APP_SUPABASE_URL, VITE_APP_SUPABASE_KEY } = import.meta.env;
