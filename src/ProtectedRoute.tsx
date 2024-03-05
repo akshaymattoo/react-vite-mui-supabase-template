@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "./hooks/Auth";
-import AppBar from "./components/AppBar";
+import AppBar from "./components/BottomAppBar";
 import BottomNavigation from "./components/BottomNavigation";
 const ProtectedRoute = ({ children }: any) => {
   const { user } = useAuth();
