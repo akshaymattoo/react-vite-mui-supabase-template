@@ -100,5 +100,5 @@ We will setup e2e testing with playwright.
 
 # Coming 
 - Stripe Integration
-- Umami Integration
+- Umami Integration for analytics
 - 
