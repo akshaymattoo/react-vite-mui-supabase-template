@@ -88,14 +88,16 @@ In this section we will setup Auth module so the user details are available on a
 
 - Create a folder `hooks` in the src directory 
 - Create a file `Auth.tsx` in the older. 
-- Copy the content from [here]().
-- Create a file ProtectedRoute.tsx and copy the contents from [here]().
+- Copy the content from [here](https://github.com/akshaymattoo/react-vite-mui-supabase-template/blob/main/src/hooks/Auth.tsx).
+- Create a file ProtectedRoute.tsx and copy the contents from [here](https://github.com/akshaymattoo/react-vite-mui-supabase-template/blob/main/src/ProtectedRoute.tsx).
 - Now in the App.tsx if you want your route to be not shown until the user has logger in wrap it with `<ProtectedRoute> <Home /> </ProtectedRoute>`. 
 - Wrap the whole in App.tsx with  `<AuthProvider> </AuthProvider>`. This will ensure we can access `user` anywhere in the app. 
 
 
 # Setup Testing 
-We will setup e2e testing with playwright. 
+We will setup e2e testing with [playwright](https://playwright.dev/). 
+- To install playwright run `npm init playwright@latest`.
+- This will create necessary folders and configurations for the project.
 
 # Coming 
 - Stripe Integration
