@@ -1,7 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "./hooks/Auth";
 import AppBar from "./components/BottomAppBar";
-import BottomNavigation from "./components/BottomNavigation";
 const ProtectedRoute = ({ children }: any) => {
   const { user } = useAuth();
   console.log(user);
@@ -13,7 +12,7 @@ const ProtectedRoute = ({ children }: any) => {
   return  <>
   <AppBar />
   {children}
-  <BottomNavigation />
+  
 </>;
 };
 
