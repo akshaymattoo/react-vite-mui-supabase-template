@@ -95,3 +95,10 @@ In this section we will setup Auth module so the user details are available on a
 
 # Update BottomNavigation
 
+# Setup Testing 
+We will setup e2e testing with playwright. 
+
+# Coming 
+- Stripe Integration
+- Umami Integration
+- 
