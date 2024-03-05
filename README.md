@@ -100,6 +100,7 @@ We will setup e2e testing with [playwright](https://playwright.dev/).
 - This will create necessary folders and configurations for the project.
 - To test run `npx playwright test`. If you would have selected github actions true then it would run test for every push. The info can be found in the `Actions` tab of your github project.
 - It gives an option to see/download the reports.
+- Now add more tests to test folder and all of them will run when we push. If you want to change which test to run edit the `.github/workflows/playwirhgt.yml` file.
 
 # Coming 
 - Stripe Integration
