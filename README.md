@@ -93,7 +93,6 @@ In this section we will setup Auth module so the user details are available on a
 - Now in the App.tsx if you want your route to be not shown until the user has logger in wrap it with `<ProtectedRoute> <Home /> </ProtectedRoute>`. 
 - Wrap the whole in App.tsx with  `<AuthProvider> </AuthProvider>`. This will ensure we can access `user` anywhere in the app. 
 
-# Update BottomNavigation
 
 # Setup Testing 
 We will setup e2e testing with playwright. 

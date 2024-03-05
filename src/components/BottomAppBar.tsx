@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
 import HomeIcon from "@mui/icons-material/Home";
 import AddIcon from '@mui/icons-material/Add';
-import AutoGraphIcon from "@mui/icons-material/AutoGraph";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -68,16 +68,16 @@ export default function BottomAppBar() {
             onClick={() => navigation("/home")}
           />
           <BottomNavigationAction
-            label="Add"
+             
             icon={ <StyledFab color="secondary" aria-label="add">
             <AddIcon />
           </StyledFab>}
             onClick={handleClickOpen}
           />
           <BottomNavigationAction
-            label="Dashboard"
-            icon={<AutoGraphIcon />}
-            onClick={() => navigation("/dashboard")}
+            label="Account"
+            icon={<AccountCircleIcon />}
+            onClick={() => navigation("/account")}
           />
         </BottomNavigation>
       </Paper>
