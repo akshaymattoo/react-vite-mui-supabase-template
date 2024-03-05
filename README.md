@@ -91,6 +91,6 @@ In this section we will setup Auth module so the user details are available on a
 - Copy the content from [here]().
 - Create a file ProtectedRoute.tsx and copy the contents from [here]().
 - Now in the App.tsx if you want your route to be not shown until the user has logger in wrap it with `<ProtectedRoute> <Home /> </ProtectedRoute>`. 
-- Wrap the whole in App.tsx with  <AuthProvider> </AuthProvider>.
+- Wrap the whole in App.tsx with  `<AuthProvider> </AuthProvider>`.
 
 
