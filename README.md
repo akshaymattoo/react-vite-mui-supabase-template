@@ -77,4 +77,5 @@ To create a basic project with login, Supabase Auth, and navigation:
 - Insert the provided JavaScript code in your `index.html`'s `<head>` tag.
 
 # To Do
+- How to make your react app as PWA.
 - Integrate Stripe for payments.
