@@ -1,107 +1,80 @@
 # react-vite-mui-supabase-template
-This is a  template code to use for future projects which will give me a boiler plate code to start with
+This template helps start new projects with basic setup.
 
-# Steps for building the project from empty directory 
+# Steps for Setting Up Your Project from an Empty Directory
 
-If you alredy have a directory or got project
-- cd <folder>
-- npm create vite@latest .
-- Fill the prompts and continue with React + Typescript
+If you already have a directory or a project:
+- Navigate to your folder with `cd <folder>`.
+- Create a new Vite project using `npm create vite@latest .`.
+- Choose React and TypeScript when prompted.
 
-# Install vite dependenies 
-- cd <project_name>
-- npm i
-- npm run dev
+# Installing Vite Dependencies
+- Go to your project's folder `cd <project_name>`.
+- Install dependencies with `npm i`.
+- Start the project with `npm run dev`.
 
-The above command will start a vite + react + typescript project
+This command begins a project using Vite, React, and TypeScript.
 
-# [Install](https://mui.com/material-ui/getting-started/installation/) [Material UI](https://mui.com/material-ui/getting-started/)
-- npm install @mui/material @emotion/react @emotion/styled
+# Install Material UI
+- Add Material UI to your project: `npm install @mui/material @emotion/react @emotion/styled`.
 
-# Install MUI icons 
-- npm install @mui/icons-material
+# Add MUI Icons
+- Include MUI icons: `npm install @mui/icons-material`.
 
+# Using the MUI Library
+- Open `App.tsx` and replace the div's content with `<Button variant="contained">Hello world</Button>`.
+- Delete any imports you don't need.
+- Start the app with `npm run dev` to see the button.
 
-# Usage of MUI library 
-- Open App.tsx file and replace the div content with  `<Button variant="contained">Hello world</Button>`
-- Remove the unused imports
-- run ` nom run dev` and check if the button is rendered 
+Now you have a project ready to build on with MUI components.
 
-We have a project with MUI components installed and we can start building anything on top of it. 
+To create a basic project with login, Supabase Auth, and navigation:
+- Focus on mobile design first. This project doesn't have a separate web UI.
 
-The steps below are to be followed if we want to have a skelton project with 
-- Login 
-- Supabase Auth
-- Navigation between routes 
-I am following a mobile design first approach. This project doesn't have a seperate web UI to be rendered. 
+# Setting Up Navigation with React Router
+- Add react-router: `npm i react-router-dom`.
+- Make `Home.tsx` and `Login.tsx` components in the src folder.
+- Add `import { BrowserRouter } from "react-router-dom";` in `main.tsx`.
+- Surround `<App/>` with `<BrowserRouter>`.
+- In `App.tsx`, use `<Routes>` and `<Route>` to add your paths.
+- Run `npm run dev` and visit your new routes to see if they work.
 
+# Install Supabase
+- Sign up or log in at Supabase.
+- Create a new project and follow the instructions.
+- When your project is ready, you'll go to a specific URL.
+- Make a `.env` file and exclude it from Git with `.gitignore`.
+- Add `VITE_APP_SUPABASE_URL` and `VITE_APP_SUPABASE_KEY` to your `.env`.
+- Find these settings at a specific Supabase URL.
+- Install the Supabase client: `npm i @supabase/supabase-js`.
 
-# Install react router and have our app naviagte between pages
+# Setting Up Supabase Client
+- Make a `lib` folder in src.
+- Create `api.ts` with Supabase client setup code.
+- Make a `constants.ts` for your environment variables.
 
-- npm i react-router-dom
-- Create a component Home.tsx and Login.tsx in the src directory
-- Add `import { BrowserRouter } from "react-router-dom";` in main.tsx
-- Wrap <App/> with <BrowserRouter>
-- Open App.tsx and add <Routes> <Route path="/home" element={<Home/>}> </Route></Routes> and other routes you wish to add
-- run `npm run dev` and go the route you have added like http://localhost:5173/home or http://localhost:5173/login
-- Check if the text is rendered
+# Enabling Google Login with Supabase
+- Set up Google login at a specific Supabase URL.
+- Create a Google Cloud account and project.
+- Configure OAuth consent and credentials.
+- Add your Supabase URL as the redirect URI.
+- Update Supabase with your Google client ID and secret.
 
-# Install [Supabase](https://supabase.com/) 
-- Signin or create an account with Supabase
-- Once logged in you will land on [page](https://supabase.com/dashboard/projects) to create a New Project 
-- Click New project and follow the prompts.
-- Once the project is created you will land on [page] (https://supabase.com/dashboard/project/<project_id>/building)
-- Create .env file and add it to .gitignore
-- Create two variables VITE_APP_SUPABASE_URL and VITE_APP_SUPABASE_KEY. 
-- Copy the values from the URL into these two keys
-- If you are not able to find the settings for the project go to [URL](https://supabase.com/dashboard/project/<project_id>/settings/api)
-- run ` npm i @supabase/supabase-js` this will install the supabase client in the project
+# Setting Up Auth with React Context
+- Make an Auth module for global user access.
+- Create a `hooks` folder and add `Auth.tsx`.
+- Use the provided content for `Auth.tsx`.
+- Make `ProtectedRoute.tsx` for authenticated routes.
+- Wrap your app with `<AuthProvider>` to use `user` anywhere.
 
-# Project setup to access supabase client
-- Create a folder `lib` under src 
-- Create a file `api.ts` and paste the content 
-```
-import { createClient } from "@supabase/supabase-js";
-import { VITE_APP_SUPABASE_KEY, VITE_APP_SUPABASE_URL } from "./constants";
+# Setting Up Testing with Playwright
+- Initialize Playwright for end-to-end testing: `npm init playwright@latest`.
+- Run tests with `npx playwright test`.
+- Automate tests with GitHub Actions. Configure in `.github/workflows/playwright.yml`.
 
-export const supabase = createClient(
-  VITE_APP_SUPABASE_URL,
-  VITE_APP_SUPABASE_KEY
-); 
-```
-- Create another file `constants.ts` and paste the content ```export const { VITE_APP_SUPABASE_URL, VITE_APP_SUPABASE_KEY } = import.meta.env;```
+# Integrating Umami for Analytics
+- Sign up at Umami and add your website.
+- Insert the provided JavaScript code in your `index.html`'s `<head>` tag.
 
-# Enable Google login on supabase
-- Go to https://supabase.com/dashboard/project/<pid>/auth/providers
-- Go to https://console.cloud.google.com/ and create an account
-- Create a project and once done select that project.
-- Now search Oauth in the search bar and select Oauth consent screen
-- Follow the prompts to complete the form.
-- Now select Credentials and select web application in Application Type.
-- In redirect uri put the same SUPABASE_URL/auth/v1/callback like `https://aleatiwhijoemckkppiw.supabase.co/auth/v1/callback`
-- Once you hit create you will be prompted with client Id and secret which we need to update in the supabase. 
-- These steps will enable goggle login on supabase project. 
-
-# Setup Auth.tsx with React Context
-
-In this section we will setup Auth module so the user details are available on any component via a react hook
-
-- Create a folder `hooks` in the src directory 
-- Create a file `Auth.tsx` in the older. 
-- Copy the content from [here](https://github.com/akshaymattoo/react-vite-mui-supabase-template/blob/main/src/hooks/Auth.tsx).
-- Create a file ProtectedRoute.tsx and copy the contents from [here](https://github.com/akshaymattoo/react-vite-mui-supabase-template/blob/main/src/ProtectedRoute.tsx).
-- Now in the App.tsx if you want your route to be not shown until the user has logger in wrap it with `<ProtectedRoute> <Home /> </ProtectedRoute>`. 
-- Wrap the whole in App.tsx with  `<AuthProvider> </AuthProvider>`. This will ensure we can access `user` anywhere in the app. 
-
-
-# Setup Testing 
-We will setup e2e testing with [playwright](https://playwright.dev/). 
-- To install playwright run `npm init playwright@latest`.
-- This will create necessary folders and configurations for the project.
-- To test run `npx playwright test`. If you would have selected github actions true then it would run test for every push. The info can be found in the `Actions` tab of your github project.
-- It gives an option to see/download the reports.
-- Now add more tests to test folder and all of them will run when we push. If you want to change which test to run edit the `.github/workflows/playwirhgt.yml` file.
-
-# Coming 
-- Stripe Integration
-- Umami Integration for analytics
+# To Do
+- Integrate Stripe for payments.
